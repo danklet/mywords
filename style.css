@@ -1,0 +1,186 @@
+/* MyWords support site — one stylesheet, no build step, no external requests.
+   Deliberately self-contained: the privacy policy of a password manager should
+   not itself load a font or a stylesheet from a third-party CDN. */
+
+:root {
+  --ink: #1c1c1e;
+  --ink-soft: #5b5b60;
+  --rule: #e2e2e6;
+  --bg: #fbfbfd;
+  --card: #ffffff;
+  --accent: #3a5bd9;
+  --accent-soft: #eef1fc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f2f2f7;
+    --ink-soft: #a0a0a8;
+    --rule: #33333a;
+    --bg: #131316;
+    --card: #1c1c20;
+    --accent: #8ea4ff;
+    --accent-soft: #202436;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 0 1.5rem 6rem;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 44rem; margin: 0 auto; }
+
+/* ---- masthead ---- */
+
+header.masthead {
+  padding: 4rem 0 2.5rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 3rem;
+}
+
+.masthead h1 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  letter-spacing: -0.022em;
+  line-height: 1.1;
+}
+
+.masthead p.tagline {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+}
+
+nav.crumbs {
+  padding: 1.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+nav.crumbs a { color: var(--accent); text-decoration: none; }
+nav.crumbs a:hover { text-decoration: underline; }
+
+/* ---- prose ---- */
+
+h2 {
+  margin: 3rem 0 0.75rem;
+  font-size: 1.4rem;
+  letter-spacing: -0.014em;
+}
+
+h3 {
+  margin: 2rem 0 0.5rem;
+  font-size: 1.1rem;
+  letter-spacing: -0.008em;
+}
+
+p, li { margin: 0 0 1rem; }
+
+ul, ol { padding-left: 1.4rem; }
+
+li { margin-bottom: 0.5rem; }
+
+a { color: var(--accent); }
+
+strong { font-weight: 600; }
+
+code {
+  background: var(--accent-soft);
+  padding: 0.12em 0.38em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.updated {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ---- callout: the one claim that matters most ---- */
+
+.callout {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 1.25rem 1.4rem;
+  margin: 2rem 0;
+}
+
+.callout p:last-child { margin-bottom: 0; }
+
+/* ---- summary table ---- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 2rem;
+  font-size: 0.97rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.7rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+th {
+  font-weight: 600;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---- FAQ ---- */
+
+details {
+  border-bottom: 1px solid var(--rule);
+  padding: 1rem 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+summary::after {
+  content: "+";
+  color: var(--accent);
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+details[open] summary::after { content: "\2013"; }
+
+details > *:not(summary) { margin-top: 0.85rem; }
+
+details p:last-child { margin-bottom: 0; }
+
+footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}

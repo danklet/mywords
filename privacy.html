@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — MyWords</title>
+<meta name="description" content="MyWords collects no data. Your vault is encrypted on your device and never sent to us.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <h1>Privacy Policy</h1>
+  <p class="tagline">MyWords for iPhone and iPad</p>
+</header>
+
+<p class="updated">Last updated: 10 September 2026</p>
+
+<div class="callout">
+  <p><strong>MyWords collects no personal data. None.</strong></p>
+  <p>There is no account to create, no server that stores your vault, and no
+  analytics or crash-reporting code in the app. We have no way to see your
+  passwords, your notes, your attachments, or even whether you use the app at
+  all.</p>
+</div>
+
+<h2>What we collect</h2>
+
+<p>Nothing. We operate no servers that receive data from MyWords, and the app
+contains no third-party SDKs of any kind — no analytics, no advertising, no
+attribution, no crash reporting.</p>
+
+<p>Because we collect nothing, there is nothing for us to sell, share, disclose to
+a third party, hand over in response to a legal request, or lose in a breach.</p>
+
+<h2>Where your data lives</h2>
+
+<p>Your vault is stored on your device, encrypted with a key derived from your
+master password using PBKDF2, under AES-256-GCM. The master password is never
+stored anywhere — not on the device and not with us. If you enable a Secret Key,
+it is combined with your master password before key derivation, and it is likewise
+never transmitted.</p>
+
+<p>If you turn on Face ID or Touch ID unlock, your vault key is stored in the
+device Keychain behind a biometric access control, which means the operating
+system will only release it after your face or fingerprint is verified on that
+device.</p>
+
+<h2>When MyWords uses the network</h2>
+
+<p>MyWords has no backend. It makes network connections in exactly three
+situations, all described here in full.</p>
+
+<table>
+  <tr>
+    <th>What</th>
+    <th>Where it goes</th>
+    <th>When</th>
+  </tr>
+  <tr>
+    <td><strong>Site icons</strong></td>
+    <td>The website whose address you saved, and — only if that site has no icon
+    to offer — DuckDuckGo's public icon service at
+    <code>icons.duckduckgo.com</code></td>
+    <td>When you save or update a login that has a web address, so the record can
+    show that site's icon</td>
+  </tr>
+  <tr>
+    <td><strong>Sync</strong></td>
+    <td>Directly to your own computer running the MyWords desktop app, on your
+    local network only</td>
+    <td>Only when you start a sync yourself</td>
+  </tr>
+  <tr>
+    <td><strong>Sharing an item</strong></td>
+    <td>Directly to another device you are holding, on your local network only</td>
+    <td>Only when you enter a share code yourself</td>
+  </tr>
+</table>
+
+<h3>About site icons</h3>
+
+<p>This is the only request MyWords makes that you don't explicitly trigger, so
+it's worth being precise about it. When you save a login with a web address,
+MyWords asks that website for its icon. If the site doesn't provide one, MyWords
+asks DuckDuckGo's icon service, which receives only the domain name — for example
+<code>example.com</code>. It never receives your username, your password, or
+anything that identifies you or your device. The request carries no cookies and no
+stored identifiers, because MyWords uses an ephemeral connection that keeps
+nothing. Your saved address is never sent to us, because we run no server to send
+it to. DuckDuckGo's handling of these requests is covered by
+<a href="https://duckduckgo.com/privacy">their privacy policy</a>.</p>
+
+<h3>About sync and sharing</h3>
+
+<p>Sync and item sharing connect your device directly to the other device over
+your local network. Traffic does not pass through any server of ours, or anyone
+else's. Each session establishes a fresh shared key by X25519 key agreement,
+derives an encryption key from it with HKDF-SHA256, and encrypts everything that
+follows with AES-256-GCM. Both features are off until you start them.</p>
+
+<h2>Backups you create</h2>
+
+<p>When you make a backup, MyWords writes a single encrypted <code>.mwbak</code>
+file, encrypted under a password you supply, and hands it to you through the
+standard iOS share sheet. Where it goes from there is entirely your choice. If you
+save it to iCloud Drive, Dropbox, or anywhere else, that provider's terms and
+privacy policy apply to the file — but the contents remain encrypted, and that
+provider cannot read them without your backup password.</p>
+
+<h2>AutoFill</h2>
+
+<p>If you enable MyWords under Settings › General › AutoFill &amp; Passwords, iOS
+may ask MyWords to supply a saved login for an app or website you are using.
+MyWords answers from your encrypted vault on the device, after confirming your
+identity with Face ID or Touch ID. iOS tells MyWords only which app or site is
+asking; MyWords reports nothing back to us, and nothing about your AutoFill use
+leaves your device.</p>
+
+<h2>Camera and photos</h2>
+
+<p>You can add an attachment to a record by taking a photo, scanning a document,
+or choosing an image from your photo library. Anything you capture is encrypted
+straight into your vault. Captured photos are never written back to your photo
+library, and MyWords requests no permission to add to it. MyWords never opens the
+camera except when you choose to add an attachment.</p>
+
+<h2>Tracking</h2>
+
+<p>MyWords does not track you. It does not use the iOS Advertising Identifier, does
+not request App Tracking Transparency permission, does not fingerprint your device,
+and does not link any activity to your identity — on its own or with data from
+anywhere else.</p>
+
+<h2>Children</h2>
+
+<p>MyWords is rated 4+ and is safe for all ages. It collects no data from anyone,
+including children under 13.</p>
+
+<h2>Your rights</h2>
+
+<p>Regulations such as the GDPR and the CCPA give you rights to access, correct,
+export, and delete the personal data a company holds about you. We hold none, so
+there is nothing to request. Your data is already entirely in your hands: you can
+export it at any time as an encrypted backup, and Preferences › Erase All Data
+destroys every vault, key, and setting on the device permanently.</p>
+
+<p>Deleting the app also removes its data. Because nothing was ever sent to us,
+deletion is complete at that moment — there is no copy elsewhere to delete.</p>
+
+<h2>Changes to this policy</h2>
+
+<p>If this policy changes, the updated version will be posted on this page with a
+new date at the top. Should MyWords ever add a feature that transmits data
+anywhere, this policy will be updated to say so plainly, before that feature
+ships.</p>
+
+<h2>Contact</h2>
+
+<p>Questions about this policy or about privacy in MyWords:
+<a href="mailto:support@example.com">support@example.com</a></p>
+
+<nav class="crumbs">
+  <a href="index.html">&larr; MyWords</a> &nbsp;·&nbsp;
+  <a href="support.html">Support</a>
+</nav>
+
+<footer>
+  <p>MyWords &middot; Your passwords stay on your device.</p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — MyWords</title>
+<meta name="description" content="Help with MyWords: AutoFill setup, sync, backups, and recovering a vault.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <h1>Support</h1>
+  <p class="tagline">Getting help with MyWords</p>
+</header>
+
+<p>Email <a href="mailto:support@example.com">support@example.com</a> and you'll get
+a reply. Please include your iOS version and your device model — and never include
+a password, a Secret Key, or a backup file.</p>
+
+<h2>Common questions</h2>
+
+<details>
+  <summary>How do I turn on AutoFill?</summary>
+  <p>Open the iOS <strong>Settings</strong> app, then go to <strong>General ›
+  AutoFill &amp; Passwords</strong>. Turn on <strong>AutoFill Passwords and
+  Passkeys</strong>, then enable <strong>MyWords</strong> in the list of
+  providers.</p>
+  <p>Your saved logins will then appear above the keyboard when you tap a sign-in
+  field in Safari or in an app. Face ID or Touch ID confirms it's you before
+  anything is filled.</p>
+  <p>Two things to know: a login only appears for a site if you saved a web address
+  on that record, and you need to unlock MyWords at least once after installing so
+  it can hand your logins to the system index.</p>
+</details>
+
+<details>
+  <summary>I forgot my master password. Can you recover my vault?</summary>
+  <p>No — and this is by design, not a limitation we could lift if we wanted to.
+  Your master password is the key to your vault. It is never stored on the device
+  and never sent to us, so there is no copy of it anywhere and no back door in the
+  encryption. Nobody, including us, can open your vault without it.</p>
+  <p>If you have an encrypted backup and remember its backup password, restore from
+  that. Otherwise the data cannot be recovered, and your only path forward is
+  Preferences › Erase All Data to start fresh.</p>
+</details>
+
+<details>
+  <summary>What is a Secret Key, and do I need one?</summary>
+  <p>A Secret Key is a second, long, randomly generated secret that gets combined
+  with your master password before your vault key is derived. Its purpose is that
+  your master password alone becomes useless: someone who learns or guesses it
+  still cannot open your vault on a new device without also having the Secret
+  Key.</p>
+  <p>The trade-off is that you must store the Secret Key somewhere safe and
+  separate — a printed copy, or a password manager on another device. Lose it and
+  your vault is unrecoverable even with the correct master password. It's a real
+  security gain for anyone comfortable with that responsibility, and optional for
+  everyone else.</p>
+</details>
+
+<details>
+  <summary>How do I sync with the desktop app?</summary>
+  <p>Both devices must be on the same Wi-Fi network, and the desktop app must be
+  running with its vault unlocked.</p>
+  <p>In MyWords on iPhone or iPad, open <strong>Sync</strong>, and your computer
+  will appear once it's discovered. Pair the vault you want to sync with the vault
+  on the desktop side, then start the sync. The two devices talk directly to each
+  other, end-to-end encrypted — nothing passes through a server.</p>
+  <p>The first time you sync, iOS will ask for permission to find devices on your
+  local network. Sync cannot work without it. If you declined, you can re-enable it
+  under Settings › MyWords › Local Network.</p>
+</details>
+
+<details>
+  <summary>Sync can't find my computer.</summary>
+  <p>Working through these in order resolves nearly every case:</p>
+  <ul>
+    <li>Confirm both devices are on the <strong>same</strong> Wi-Fi network — not
+    one on Wi-Fi and one on a guest network or wired to a different subnet.</li>
+    <li>Check that <strong>Local Network</strong> is enabled for MyWords in
+    Settings › MyWords.</li>
+    <li>Make sure the desktop app is open and its vault is unlocked.</li>
+    <li>Turn off any VPN on either device — a VPN usually blocks the local
+    discovery MyWords relies on.</li>
+    <li>On networks with client isolation enabled (common in hotels, offices, and
+    student housing), devices cannot see each other at all. Use a personal hotspot
+    or a home network instead.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>How do I share a single item with someone else's device?</summary>
+  <p>On the device sending, select the item or items and choose <strong>Share
+  Items</strong>. A short-lived share code appears. On the receiving device, open
+  <strong>Receive Items</strong> and enter that code.</p>
+  <p>Both devices must be on the same Wi-Fi network. The transfer is end-to-end
+  encrypted and goes directly between the two devices. The code expires as soon as
+  you leave the screen, so it can't be reused later.</p>
+</details>
+
+<details>
+  <summary>How do backups work, and where are they stored?</summary>
+  <p>Open <strong>Backups</strong> and create one. MyWords writes a single
+  encrypted <code>.mwbak</code> file, encrypted under a password you choose, and
+  offers it through the standard iOS share sheet — save it to Files, iCloud Drive,
+  or anywhere else you like.</p>
+  <p>Keep the backup password somewhere separate from the backup itself. Without
+  it, the file cannot be restored by anyone, including us.</p>
+</details>
+
+<details>
+  <summary>Can I keep work and personal passwords separate?</summary>
+  <p>Yes. Create as many vaults as you like from the vault menu. You can give any
+  additional vault its own password, in which case it stays locked even while the
+  rest of the app is open — and you can deactivate a vault to hide its contents
+  entirely until you need it.</p>
+</details>
+
+<details>
+  <summary>What does the security audit flag?</summary>
+  <p>Four things: passwords that are weak, passwords you've used on more than one
+  record, passwords you haven't changed in one to three years, and passwords you
+  haven't changed in over three years. Every check runs entirely on your device
+  against your decrypted vault — no password, and no hash of one, is ever sent
+  anywhere.</p>
+</details>
+
+<details>
+  <summary>Why does MyWords ask for camera access?</summary>
+  <p>Only so you can photograph or scan a document straight into an encrypted
+  attachment. It's used at the moment you choose to add one and never otherwise.
+  Captures go into your vault encrypted and are never saved to your photo
+  library.</p>
+</details>
+
+<details>
+  <summary>Does MyWords fill passkeys?</summary>
+  <p>Not in this version. MyWords fills saved passwords. If you rely on passkeys,
+  keep using iCloud Keychain or another provider alongside MyWords — iOS allows
+  more than one AutoFill provider to be enabled at the same time.</p>
+</details>
+
+<details>
+  <summary>How do I delete everything?</summary>
+  <p>Preferences › <strong>Erase All Data</strong> permanently destroys every
+  vault, every key, and every setting on the device. It cannot be undone, so export
+  a backup first if there's any chance you'll want the data later. Deleting the app
+  removes its data too.</p>
+</details>
+
+<h2>Reporting a security issue</h2>
+
+<p>If you believe you've found a vulnerability in MyWords, please email
+<a href="mailto:support@example.com">support@example.com</a> with the details rather
+than filing it publicly. Security reports are read first and answered.</p>
+
+<nav class="crumbs">
+  <a href="index.html">&larr; MyWords</a> &nbsp;·&nbsp;
+  <a href="privacy.html">Privacy Policy</a>
+</nav>
+
+<footer>
+  <p>MyWords &middot; Your passwords stay on your device.</p>
+</footer>
+
+</div>
+</body>
+</html>
