@@ -58,9 +58,9 @@ Substitute your GitHub username:
 
 | App Store Connect field | URL |
 |---|---|
-| **Support URL** | `https://<username>.github.io/mywords-support/support.html` |
-| **Privacy Policy URL** | `https://<username>.github.io/mywords-support/privacy.html` |
-| Marketing URL *(optional)* | `https://<username>.github.io/mywords-support/` |
+| **Support URL** | `https://danklet.github.io/mywords/support.html` |
+| **Privacy Policy URL** | `https://danklet.github.io/mywords/privacy.html` |
+| Marketing URL *(optional)* | `https://danklet.github.io/mywords/` |
 
 ## Verify before you paste them into App Store Connect
 
